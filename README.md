@@ -39,4 +39,4 @@
 4.  Use the reshape cast function to shape the tidy dataset into wide format
 5.  write the tidy dataset to a csv file using write.csv & order it by Activity and Subject via dplyr arrange function
 
-
+* The tidy_data.csv file can be read in a standard text editor, spreadsheet software, or directly in R using various text read packages.
