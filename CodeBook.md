@@ -20,7 +20,7 @@
 ##### activityrecognition@smartlab.ws
 ##### www.smartlab.ws
 
-"*The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
 Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
 wearing a smartphone (Samsung Galaxy S II) on the waist. 
 Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity 
@@ -33,11 +33,11 @@ sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor ac
 body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. 
 The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. 
 From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' 
-for more details. *"
+for more details. 
 
 Use of the data is in accordance with:
 
-*License:
+License:
 ========
 Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 
@@ -45,11 +45,11 @@ Use of this dataset in publications must be acknowledged by referencing the foll
 
 This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
 
-Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.*
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
 The source dataset included:
 
-The dataset includes the following files:
+The source data include the following files:
 =========================================
 
 - 'README.txt'
@@ -74,13 +74,13 @@ The dataset includes the following files:
 2.  Merge X datasets
 3.  Merge Subject Dataset
 4.  Extract all of the variables names with mean and standard deviation measuments
-⋅⋅* This uses the grep function to retrieve all of the variables that contain mean or std in the name, per the features.txt
+      This uses the grep function to retrieve all of the variables that contain mean or std in the name, per the features.txt
 5.  Extract the x dataset variable for mean and std via dplyr select function by passing the names captured previously
 6.  Merge Activity Labels with the test labels via dplyr select function by joining the data.frame on the common V1 variable
 7.  Add activities to the dataset by row
-⋅⋅*  It is assumed that the row number is the common join
+      It is assumed that the row number is the common join
 8.  Add the subject to the dataset using the dplyr mutate function
-⋅⋅*  It is assumed that the row number is the common join
+      It is assumed that the row number is the common join
 9.  Transform Activity and Subjuct to factors for the new dataset
 10.  Use of the reshape melt function on the dataset to get mean for each variable by Activity and Subject
 11. Use of the reshape cast function the dataset into wide format
