@@ -99,8 +99,7 @@ These signals were used to estimate variables of the feature vector for each pat
 ###### - The average values are grouped by Activity and Subject.
 
 ###### Variables included in the tidy_data.csv
-- As there was ambiguity for which variables to use in the tidy dataset, all variables that included mean or std in the name were included.
-
++ As there was ambiguity for which variables to use in the tidy dataset, all variables that included mean or std in the name were included
 + Activity - factor
 + Subject - factor
 + tBodyAcc-mean()-X
