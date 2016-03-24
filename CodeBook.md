@@ -1,15 +1,15 @@
 ﻿
-# Getting and Cleaning Data Final Project 
-####                  popdata                
-####     Coursera-John Hopkins University    
+### Getting and Cleaning Data Final Project 
+#####                  popdata                
+#####     Coursera-John Hopkins University    
 
-## From the Instructor
+### From the Instructor
 ##### The purpose of this project is to demonstrate your ability to collect, 
 ##### work with, and clean a data set. The goal is to prepare tidy data that 
 ##### can be used for later analysis.
 
 
-## Source Data
+### Source Data
 
 ##### Human Activity Recognition Using Smartphones Dataset, Version 1.0
 
@@ -68,11 +68,11 @@ The source data include the following files:
 
 - 'test/y_test.txt': Test labels.
 
-## Data Transformations:
+##### Data Transformations:
 
-1.  Merge activity labels with the test labels
-2.  Merge X datasets
-3.  Merge Subject Dataset
+1.  Merge the train and test Y datasets (labels)
+2.  Merge the train and test X datasets (measurements)
+3.  Merge the train and test Subject Dataset (subjects)
 4.  Extract all of the variables names with mean and standard deviation measuments
    -   This uses the grep function to retrieve all of the variables that contain mean or std in the name, per the features.txt
 5.  Extract the x dataset variable for mean and std via dplyr select function by passing the names captured previously
@@ -87,7 +87,7 @@ The source data include the following files:
 
 From supplied features_info.txt
 
-### Feature Selection 
+##### Feature Selection 
 =================
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
@@ -99,8 +99,8 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.*
 
-##### The tidy_data.csv file contains the average of the selected varaibles from the merged train_x and test_x files.
-##### - The average values are grouped by Activity and Subject.
+###### The tidy_data.csv file contains the average of the selected varaibles from the merged train_x and test_x files.
+###### - The average values are grouped by Activity and Subject.
 
 ###### Variables included in the tidy_data.csv
 ++ As there was ambiguity for which variables to use in the tidy dataset, 
