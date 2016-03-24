@@ -74,20 +74,20 @@ The source data include the following files:
 2.  Merge X datasets
 3.  Merge Subject Dataset
 4.  Extract all of the variables names with mean and standard deviation measuments
-      This uses the grep function to retrieve all of the variables that contain mean or std in the name, per the features.txt
+   -   This uses the grep function to retrieve all of the variables that contain mean or std in the name, per the features.txt
 5.  Extract the x dataset variable for mean and std via dplyr select function by passing the names captured previously
 6.  Merge Activity Labels with the test labels via dplyr select function by joining the data.frame on the common V1 variable
 7.  Add activities to the dataset by row
-      It is assumed that the row number is the common join
+  -    It is assumed that the row number is the common join
 8.  Add the subject to the dataset using the dplyr mutate function
-      It is assumed that the row number is the common join
+   -   It is assumed that the row number is the common join
 9.  Transform Activity and Subjuct to factors for the new dataset
 10.  Use of the reshape melt function on the dataset to get mean for each variable by Activity and Subject
 11. Use of the reshape cast function the dataset into wide format
 
 From supplied features_info.txt
 
-*## Feature Selection 
+### Feature Selection 
 =================
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
@@ -99,99 +99,101 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.*
 
-### The tidy_data.csv file contains the average of the selected varaibles from the merged train_x and test_x files.
-### The average values are grouped by Activity and Subject.
+##### The tidy_data.csv file contains the average of the selected varaibles from the merged train_x and test_x files.
+##### - The average values are grouped by Activity and Subject.
 
-## Variables included in the tidy_data.csv
+###### Variables included in the tidy_data.csv
+++ As there was ambiguity for which variables to use in the tidy dataset, 
+++    all variables that included mean or std in the name were included.
 
-Activity - factor
-Subject - factor
-tBodyAcc-mean()-X
-tBodyAcc-mean()-Y
-tBodyAcc-mean()-Z
-tBodyAcc-std()-X
-tBodyAcc-std()-Y
-tBodyAcc-std()-Z
-tGravityAcc-mean()-X
-tGravityAcc-mean()-Y
-tGravityAcc-mean()-Z
-tGravityAcc-std()-X
-tGravityAcc-std()-Y
-tGravityAcc-std()-Z
-tBodyAccJerk-mean()-X
-tBodyAccJerk-mean()-Y
-tBodyAccJerk-mean()-Z
-tBodyAccJerk-std()-X
-tBodyAccJerk-std()-Y
-tBodyAccJerk-std()-Z
-tBodyGyro-mean()-X
-tBodyGyro-mean()-Y
-tBodyGyro-mean()-Z
-tBodyGyro-std()-X
-tBodyGyro-std()-Y
-tBodyGyro-std()-Z
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z
-tBodyGyroJerk-std()-X
-tBodyGyroJerk-std()-Y
-tBodyGyroJerk-std()-Z
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-X
-fBodyAcc-mean()-Y
-fBodyAcc-mean()-Z
-fBodyAcc-std()-X
-fBodyAcc-std()-Y
-fBodyAcc-std()-Z
-fBodyAcc-meanFreq()-X
-fBodyAcc-meanFreq()-Y
-fBodyAcc-meanFreq()-Z
-fBodyAccJerk-mean()-X
-fBodyAccJerk-mean()-Y
-fBodyAccJerk-mean()-Z
-fBodyAccJerk-std()-X
-fBodyAccJerk-std()-Y
-fBodyAccJerk-std()-Z
-fBodyAccJerk-meanFreq()-X
-fBodyAccJerk-meanFreq()-Y
-fBodyAccJerk-meanFreq()-Z
-fBodyGyro-mean()-X
-fBodyGyro-mean()-Y
-fBodyGyro-mean()-Z
-fBodyGyro-std()-X
-fBodyGyro-std()-Y
-fBodyGyro-std()-Z
-fBodyGyro-meanFreq()-X
-fBodyGyro-meanFreq()-Y
-fBodyGyro-meanFreq()-Z
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyAccMag-meanFreq()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-std()
-fBodyBodyAccJerkMag-meanFreq()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-std()
-fBodyBodyGyroMag-meanFreq()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
-fBodyBodyGyroJerkMag-meanFreq()
-angle(tBodyAccMean,gravity)
-angle(tBodyAccJerkMean),gravityMean)
-angle(tBodyGyroMean,gravityMean)
-angle(tBodyGyroJerkMean,gravityMean)
-angle(X,gravityMean)
-angle(Y,gravityMean)
-angle(Z,gravityMean)
++ Activity - factor
++ Subject - factor
++ tBodyAcc-mean()-X
++ tBodyAcc-mean()-Y
++ tBodyAcc-mean()-Z
++ tBodyAcc-std()-X
++ tBodyAcc-std()-Y
++ tBodyAcc-std()-Z
++ tGravityAcc-mean()-X
++ tGravityAcc-mean()-Y
++ tGravityAcc-mean()-Z
++ tGravityAcc-std()-X
++ tGravityAcc-std()-Y
++ tGravityAcc-std()-Z
++ tBodyAccJerk-mean()-X
++ tBodyAccJerk-mean()-Y
++ tBodyAccJerk-mean()-Z
++ tBodyAccJerk-std()-X
++ tBodyAccJerk-std()-Y
++ tBodyAccJerk-std()-Z
++ tBodyGyro-mean()-X
++ tBodyGyro-mean()-Y
++ tBodyGyro-mean()-Z
++ tBodyGyro-std()-X
++ tBodyGyro-std()-Y
++ tBodyGyro-std()-Z
++ tBodyGyroJerk-mean()-X
++ tBodyGyroJerk-mean()-Y
++ tBodyGyroJerk-mean()-Z
++ tBodyGyroJerk-std()-X
++ tBodyGyroJerk-std()-Y
++ tBodyGyroJerk-std()-Z
++ tBodyAccMag-mean()
++ tBodyAccMag-std()
++ tGravityAccMag-mean()
++ tGravityAccMag-std()
++ tBodyAccJerkMag-mean()
++ tBodyAccJerkMag-std()
++ tBodyGyroMag-mean()
++ tBodyGyroMag-std()
++ tBodyGyroJerkMag-mean()
++ tBodyGyroJerkMag-std()
++ fBodyAcc-mean()-X
++ fBodyAcc-mean()-Y
++ fBodyAcc-mean()-Z
++ fBodyAcc-std()-X
++ fBodyAcc-std()-Y
++ fBodyAcc-std()-Z
++ fBodyAcc-meanFreq()-X
++ fBodyAcc-meanFreq()-Y
++ fBodyAcc-meanFreq()-Z
++ fBodyAccJerk-mean()-X
++ fBodyAccJerk-mean()-Y
++ fBodyAccJerk-mean()-Z
++ fBodyAccJerk-std()-X
++ fBodyAccJerk-std()-Y
++ fBodyAccJerk-std()-Z
++ fBodyAccJerk-meanFreq()-X
++ fBodyAccJerk-meanFreq()-Y
++ fBodyAccJerk-meanFreq()-Z
++ fBodyGyro-mean()-X
++ fBodyGyro-mean()-Y
++ fBodyGyro-mean()-Z
++ fBodyGyro-std()-X
++ fBodyGyro-std()-Y
++ fBodyGyro-std()-Z
++ fBodyGyro-meanFreq()-X
++ fBodyGyro-meanFreq()-Y
++ fBodyGyro-meanFreq()-Z
++ fBodyAccMag-mean()
++ fBodyAccMag-std()
++ fBodyAccMag-meanFreq()
++ fBodyBodyAccJerkMag-mean()
++ fBodyBodyAccJerkMag-std()
++ fBodyBodyAccJerkMag-meanFreq()
++ fBodyBodyGyroMag-mean()
++ fBodyBodyGyroMag-std()
++ fBodyBodyGyroMag-meanFreq()
++ fBodyBodyGyroJerkMag-mean()
++ fBodyBodyGyroJerkMag-std()
++ fBodyBodyGyroJerkMag-meanFreq()
++ angle(tBodyAccMean,gravity)
++ angle(tBodyAccJerkMean),gravityMean)
++ angle(tBodyGyroMean,gravityMean)
++ angle(tBodyGyroJerkMean,gravityMean)
++ angle(X,gravityMean)
++ angle(Y,gravityMean)
++ angle(Z,gravityMean)
 
 
 
